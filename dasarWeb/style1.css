@@ -10,10 +10,34 @@ body {
 }
 /*Latihan 1*/
 .container-satu {
-    width: 800px;
+    background-image:url(bunga2.jpg);
+    background-position: center;
+    max-width: 800px;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
+}
+.sidebar-satu {
+    flex: 1;
+    order: 1;
+    margin-right: 20px;
+    background-color: orange;
+    opacity: 80%;
+}
+
+.kolom-utama {
+    flex: 3;
+    order: 2;
+    background-color: lightblue;
+    opacity: 80%;
+}
+
+.sidebar-dua {
+    flex: 1;
+    order: 3;
+    background-color: lightgreen;
+    margin-left: 20px;
+    opacity: 80%;
 }
