@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Obat</title>
+  <link rel="icon" type="image/png" href="icon-obat.png">
+  <!-- Hubungkan ke file CSS eksternal -->
+  <link rel="stylesheet" href="styleDetail.css">
+</head>
+
+<body>
+  <main>
+    <h1>💊 Detail Obat</h1>
+
+    <!-- Gambar Obat -->
+    <div class="image-container">
+      <img id="gambarObat" src="" alt="Gambar Obat">
+    </div>
+
+    <h2 id="namaObat"></h2>
+
+    <!-- Dropdown Informasi Obat -->
+    <div class="dropdown keterangan">
+      <details>
+        <summary>Keterangan Obat</summary>
+        <p id="keteranganObat"></p>
+      </details>
+    </div>
+
+    <div class="dropdown dosis">
+      <details>
+        <summary>Dosis Obat</summary>
+        <p id="dosisObat"></p>
+      </details>
+    </div>
+
+    <div class="dropdown penggunaan">
+      <details>
+        <summary>Cara Penggunaan</summary>
+        <p id="penggunaanObat"></p>
+      </details>
+    </div>
+
+    <!-- href ke indexObat -->
+    <a href="indexObat.html" class="back-btn">← Kembali</a>
+  </main>
+
+  <!-- Hubungkan ke file JavaScript eksternal -->
+  <script src="scriptDetail.js"></script>
+</body>
+</html>

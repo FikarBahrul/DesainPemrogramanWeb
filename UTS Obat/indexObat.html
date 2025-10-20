@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencarian Obat</title>
+  <link rel="icon" type="image/png" href="icon-obat.png">
+  <!-- Hubungkan ke file CSS eksternal -->
+  <link rel="stylesheet" href="styleObat.css">
+</head>
+
+<body>
+  <main>
+    <h1>📋 Daftar & Pencarian Obat</h1>
+    <!-- Bagian pencarian -->
+    <div class="search-section">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cari nama obat...">
+        <button id="searchBtn">Cari</button>
+      </div>
+
+      <!-- Dropdown filter -->
+      <div class="filters">
+        <select id="jenis">
+          <option value="semua">Filter Obat</option>
+          <option value="batuk">Obat Batuk</option>
+          <option value="flu">Obat Flu</option>
+          <option value="sakit kepala">Obat Sakit Kepala</option>
+        </select>
+
+        <select id="dosis">
+          <option value="semua">Dosis</option>
+          <option value="ringan">Ringan</option>
+          <option value="sedang">Sedang</option>
+          <option value="tinggi">Tinggi</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Daftar obat -->
+    <div class="list-container">
+      <div class="list-header">
+        <div>Nama Obat</div>
+        <div>Keterangan Obat</div>
+        <div>Dosis</div>
+      </div>
+
+      <!-- Tempat hasil daftar obat -->
+      <!-- Memanggil RenderList() dari scriptObat.js yang merupakan Array (EVALUASI SETELAH UTS) -->
+      <div id="obatList" class="grid"></div> 
+
+      <!-- Pesan jika tidak ada hasil -->
+      <div id="noResult" class="no-result" style="display:none;">Tidak ada hasil ditemukan</div>
+    </div>
+  </main>
+
+  <!-- Hubungkan ke file JavaScript eksternal -->
+  <script src="scriptObat.js"></script>
+</body>
+</html>

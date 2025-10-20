@@ -1,0 +1,125 @@
+/* ======== TEMA DASAR ======== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #e0f2fe 0%, #f0fdfa 100%);
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+main {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: #0369a1;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #0f172a;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ======== GAMBAR OBAT ======== */
+.image-container {
+  width: 80%;
+  margin: 0 auto 25px auto;
+  border: 2px solid #0369a1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* ======== DROPDOWN DETAIL ======== */
+.dropdown {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+details {
+  background-color: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+details[open] {
+  background-color: #f0fdfa;
+}
+
+summary {
+  cursor: pointer;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  outline: none;
+  list-style: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+/* Warna berbeda tiap bagian */
+.keterangan summary { 
+  background-color: #bae6fd; 
+  color: #0c4a6e; 
+}
+
+.dosis summary { 
+  background-color: #fef9c3; 
+  color: #854d0e; 
+}
+
+.penggunaan summary { 
+  background-color: #dcfce7; 
+  color: #166534; 
+}
+
+.dropdown p {
+  padding: 10px 15px;
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Tombol kembali */
+.back-btn {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #0284c7;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #0369a1;
+}
