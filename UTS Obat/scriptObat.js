@@ -85,3 +85,38 @@ jenisSelect.addEventListener("change", filterObat);
 dosisSelect.addEventListener("change", filterObat);
 
 renderList(dataObat); //memuat seluruh dataObat dari memanggil Array dataObat -> Masuk ke indexObat.html (EVALUASI SETELAH UTS)
+
+/* ==================== TAMBAH OBAT BARU ((nanti masuk ke database)EVALUASI SETELAH UTS) ==================== */
+document.getElementById("formTambahObat").addEventListener("submit", async (e) => { //async: Menandai fungsi ini asynchronous (bisa pakai await) e: object
+  e.preventDefault(); //Mencegah form melakukan reload halaman
+
+  const newObat = {
+    nama: document.getElementById("namaInput").value, //value mengambil nilai input dari field
+    jenis: document.getElementById("jenisInput").value.toLowerCase(),//toLowercase mengubah huruf menjadi kecil
+    dosis: document.getElementById("dosisInput").value.toLowerCase(),
+    keterangan: document.getElementById("keteranganInput").value,
+    penggunaan: document.getElementById("penggunaanInput").value
+  };
+
+  try {
+    // Kirim ke server (PHP)
+    const response = await fetch("tambahObat.php", { //fetch digunakan untuk kirim http request/AJAX. await menunggu request AJAX selesai.
+      method: "POST",
+      headers: { "Content-Type": "application/json" }, //data yang dikirim berupa JSON
+      body: JSON.stringify(newObat) //data yang dikirim object tadi diubah menjadi StringJSON
+    });
+
+    const result = await response.json();// .jSON adalah parse respon dari server jadi object Javascript
+    if (result.success) {
+      alert("Obat berhasil ditambahkan!"); //pop-up web
+      dataObat.push(newObat); //menambahkan obat baru ke array dataObat
+      renderList(dataObat); //refresh tampilan setelah obat baru ditambahkan oleh .push
+      e.target.reset();//Kosongkan semua input form
+    } else {
+      alert("Gagal menambah obat: " + result.message);
+    }
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Terjadi kesalahan saat menambah obat.");
+  }
+});

@@ -149,3 +149,21 @@ button:hover {
   margin-top: 20px;
   color: #64748b;
 }
+
+/* Tambah Obat */
+.add-obat-section {
+  margin-top: 30px;
+  border-top: 2px solid #0284c7;
+  padding-top: 20px;
+}
+
+#formTambahObat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+#formTambahObat input {
+  width: 250px;
+}
