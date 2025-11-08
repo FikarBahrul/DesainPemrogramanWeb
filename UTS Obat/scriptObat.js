@@ -18,24 +18,24 @@ const obatList = document.getElementById("obatList");
 const noResult = document.getElementById("noResult");
 
 /* ==================== FUNGSI TAMPILKAN DAFTAR ==================== */
-function renderList(filteredData) {
-  obatList.innerHTML = "";
+function renderList(filteredData) {//menampilkan daftar obat ke halaman html
+  obatList.innerHTML = "";//mengosongkan isi container obatList sebelum menampilkan data baru
 
-  if (filteredData.length === 0) {
+  if (filteredData.length === 0) {//jika tidak ada data maka tampilkan pesan tidak ada hasil
     noResult.style.display = "block";
-    return;
+    return;//keluar fungsi
   }
 
-  noResult.style.display = "none";
+  noResult.style.display = "none";//sembunyikan pesan tidak ada hasil jika sudah ada data
 
   filteredData
-    .sort((a, b) => a.nama.localeCompare(b.nama))
+    .sort((a, b) => a.nama.localeCompare(b.nama))//urutin array. localecompare agar urutannya sesuai alfabet
     .forEach(item => {
       //container untuk satu baris obat
-      const row = document.createElement("div");
-      row.classList.add("obat-row");
+      const row = document.createElement("div"); //ngebuat container div baru ke html
+      row.classList.add("obat-row"); //nambahin row di css
 
-      //3 kolom terpisah sebagai nama, keterangan, dan dosis
+      //buat kolom untuk nama obat, 2 class css dan mengisi text dengan nama obat/keterangan/dosis
       const namaCol = document.createElement("div");
       namaCol.classList.add("grid-item", "nama-obat");
       namaCol.textContent = item.nama;
@@ -48,17 +48,17 @@ function renderList(filteredData) {
       dosisCol.classList.add("grid-item", "dosis-obat");
       dosisCol.textContent = item.dosis.charAt(0).toUpperCase() + item.dosis.slice(1);
 
-      row.appendChild(namaCol);
+      row.appendChild(namaCol);//menambah 3 kolom tadi jadi 1 baris dengan appendchild untuk menambah child element ke parent element.
       row.appendChild(keteranganCol);
       row.appendChild(dosisCol);
 
       // href ke detail
-      row.addEventListener("click", () => {
-        localStorage.setItem("detailObat", JSON.stringify(item));
+      row.addEventListener("click", () => {//menambah event jika baris diklik
+        localStorage.setItem("detailObat", JSON.stringify(item));//simpan data sementara ke browser dan JSON.stringfly ngerubah object javascript jadi string JSON
         window.location.href = "detailObat.html";
       });
 
-      obatList.appendChild(row);
+      obatList.appendChild(row); //menambahkan baris obat yang udah dibuat ke container utama obatList
     });
 }
 
