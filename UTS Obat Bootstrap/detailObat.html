@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Obat</title>
+  <link rel="icon" type="image/png" href="icon-obat.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="min-vh-100" style="background: linear-gradient(180deg, #e0f2fe 0%, #f0fdfa 100%);">
+  <main class="container my-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+      <div class="card-body p-4 text-center">
+        <h1 class="text-primary mb-4">💊 Detail Obat</h1>
+
+        <div class="mb-4">
+          <img id="gambarObat" src="" alt="Gambar Obat" class="img-fluid rounded border border-primary p-2" style="max-width: 80%;">
+        </div>
+
+        <h2 id="namaObat" class="mb-4"></h2>
+
+        <div class="accordion" id="accordionObat">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-info bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKeterangan">
+                Keterangan Obat
+              </button>
+            </h2>
+            <div id="collapseKeterangan" class="accordion-collapse collapse" data-bs-parent="#accordionObat">
+              <div class="accordion-body text-start">
+                <p id="keteranganObat"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-warning bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDosis">
+                Dosis Obat
+              </button>
+            </h2>
+            <div id="collapseDosis" class="accordion-collapse collapse" data-bs-parent="#accordionObat">
+              <div class="accordion-body text-start">
+                <p id="dosisObat"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed bg-success bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePenggunaan">
+                Cara Penggunaan
+              </button>
+            </h2>
+            <div id="collapsePenggunaan" class="accordion-collapse collapse" data-bs-parent="#accordionObat">
+              <div class="accordion-body text-start">
+                <p id="penggunaanObat"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="indexObat.html" class="btn btn-primary mt-4">← Kembali</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scriptDetail.js"></script>
+</body>
+</html>
